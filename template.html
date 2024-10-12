@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .cv-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+
+        .info, .experience, .education {
+            margin-bottom: 20px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <h1>{{nom}} {{prenom}}</h1>
+    <div class="info">
+        <strong>Email :</strong> {{email}}<br>
+        <strong>Téléphone :</strong> {{telephone}}<br>
+        <strong>Adresse :</strong> {{adresse}}
+    </div>
+
+    <div class="experience">
+        <h2 class="section-title">Expériences professionnelles</h2>
+        {{#each experiences}}
+        <div class="experience-item">
+            <strong>{{poste}}</strong> - {{entreprise}} ({{dates}})
+            <p>{{description}}</p>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="education">
+        <h2 class="section-title">Éducation</h2>
+        {{#each education}}
+        <div class="education-item">
+            <strong>{{diplome}}</strong> - {{ecole}} ({{dates}})
+        </div>
+        {{/each}}
+    </div>
+</div>
+</body>
+</html>
